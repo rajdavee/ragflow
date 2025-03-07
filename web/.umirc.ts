@@ -15,7 +15,7 @@ export default defineConfig({
   esbuildMinifyIIFE: true,
   icons: {},
   hash: true,
-  favicons: ['/logo.svg'],
+  favicons: ['https://www.rag.lu/wp-content/uploads/2024/11/logo-rag-lu.png'],
   clickToComponent: {},
   history: {
     type: 'browser',

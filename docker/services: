@@ -1,12 +1,5 @@
-include:
 
-  - ./docker-compose-base.yml
-
-
-
-services:
-
-  ragflow:
+w:
 
     depends_on:
 
@@ -14,7 +7,7 @@ services:
 
         condition: service_healthy
 
-    build: ..  # Build from local Dockerfile instead of pulling an image
+    build: ..
 
     container_name: ragflow-server
 
@@ -42,9 +35,9 @@ services:
 
       - TZ=${TIMEZONE}
 
-      - HF_ENDPOINT=${HF_ENDPOINT:-""}  # Set empty string if not defined
+      - HF_ENDPOINT=${HF_ENDPOINT}
 
-      - MACOS=${MACOS:-""}  # Set empty string if not defined
+      - MACOS=${MACOS}
 
     networks:
 
@@ -56,12 +49,5 @@ services:
 
       - "host.docker.internal:host-gateway"
 
-
-
-networks:
-
-  ragflow:
-
-    driver: bridge
 
 
