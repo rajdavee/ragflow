@@ -1,6 +1,39 @@
 .datasetWrapper {
-  padding: 30px 30px 0;
-  height: 100%;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h3 {
+    color: #0A3861;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #0A3861;
+    opacity: 0.7;
+  }
+
+  .documentTable {
+    :global {
+      .ant-table-thead>tr>th {
+        background: #F5F7FA;
+        color: #0A3861;
+      }
+
+      .ant-table-tbody>tr:hover>td {
+        background: rgba(10, 56, 97, 0.05);
+      }
+
+      .ant-switch-checked {
+        background: #0A3861;
+      }
+    }
+  }
+
+  .column {
+    color: #0A3861;
+  }
 }
 
 .documentTable {

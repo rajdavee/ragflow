@@ -1,16 +1,24 @@
 .toolbarWrapper {
+  display: flex;
+  align-items: center;
+
   :global(.ant-avatar) {
     background-color: rgba(242, 243, 245, 1);
   }
 }
 
+.toolbarSpace {
+  display: flex;
+  align-items: center;
+}
+
 .circle {
   display: inline-block;
   line-height: 32px;
-  width: 32px;
+  width: 40px;
   text-align: center;
-  height: 32px;
-  border-radius: 50%;
+  height: 40px;
+  border-radius: 6px;
   background-color: rgba(242, 243, 245, 0.4);
   vertical-align: middle;
   cursor: pointer;
@@ -18,8 +26,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .language {
   cursor: pointer;
+}
+
+:global {
+  .ant-btn-primary {
+    &:hover {
+      background-color: rgba(10, 56, 97, 0.85) !important;
+      border-color: rgba(10, 56, 97, 0.85) !important;
+    }
+  }
+
+  .ant-btn-default {
+    &:hover {
+      color: #A8232F !important;
+      border-color: #A8232F !important;
+    }
+  }
 }

@@ -1,34 +1,67 @@
 .image {
-  width: 100px !important;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .imagePreview {
-  max-width: 50vw;
+  max-width: 300px;
   max-height: 50vh;
   object-fit: contain;
 }
 
 .content {
   flex: 1;
+  cursor: pointer;
+  padding: 0 16px;
   .chunkText;
 }
 
 .contentEllipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   .multipleLineEllipsis(3);
 }
 
 .contentText {
   word-break: break-all !important;
+  color: #0A3861;
 }
 
 .chunkCard {
   width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 56, 97, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #A8232F;
+    box-shadow: 0 2px 8px rgba(168, 35, 47, 0.1);
+  }
+
+  :global {
+    .ant-switch-checked {
+      background: #0A3861;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #0A3861;
+      border-color: #0A3861;
+    }
+  }
 }
 
 .cardSelected {
+  border-color: #0A3861;
+  background: rgba(10, 56, 97, 0.05);
   background-color: @selectedBackgroundColor;
 }
+
 .cardSelectedDark {
+  border-color: #A8232F;
+  background: rgba(168, 35, 47, 0.1);
   background-color: #ffffff2f;
 }

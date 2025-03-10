@@ -2,35 +2,34 @@
   max-width: 288px;
   padding: 32px 24px 24px 24px;
   flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 
   .sidebarTop {
     text-align: center;
-    .knowledgeLogo {
-    }
+    padding-bottom: 20px;
+
+    .knowledgeLogo {}
+
     .knowledgeTitle {
       font-size: 16px;
       line-height: 24px;
-      font-weight: @fontWeight700;
+      font-weight: 600;
       margin-bottom: 6px;
     }
+
     .knowledgeDescription {
       font-size: 12px;
-      font-weight: @fontWeight600;
-      color: @gray8;
+      font-weight: 500;
       margin: 0;
     }
-    padding-bottom: 20px;
   }
+
   .divider {
     height: 2px;
-    background-image: linear-gradient(
-      to right,
-      @gray11 0%,
-      @gray11 50%,
-      transparent 50%
-    );
-    background-size: 10px 2px;
-    background-repeat: repeat-x;
+    background: rgba(10, 56, 97, 0.1);
+    margin: 16px 0;
   }
 
   .menuWrapper {
@@ -38,11 +37,23 @@
 
     .menu {
       border: none;
-      font-size: @fontSize16;
-      font-weight: @fontWeight600;
+      font-size: 16px;
+      font-weight: 500;
+
       :global(.ant-menu-item) {
         display: flex;
         align-items: center;
+        border-radius: 6px;
+        margin: 4px 0;
+
+        &:hover {
+          color: #A8232F;
+        }
+
+        &.ant-menu-item-selected {
+          background-color: #0A3861;
+          color: #FFFFFF;
+        }
       }
     }
 

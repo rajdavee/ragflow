@@ -4,56 +4,79 @@
 
 .modelContainer {
   width: 100%;
+
   .factoryOperationWrapper {
     text-align: right;
   }
-  .modelItem {
-  }
+
+  .modelItem {}
+
   .llmList {
     padding-top: 10px;
   }
+
   .toBeAddedCard {
-    border-radius: 24px;
-    border: 1px solid #eaecf0;
-    background: #e3f0ff;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(10, 56, 97, 0.1);
+    background: rgba(10, 56, 97, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
     :global(.ant-card-body) {
-      padding: 10px 24px;
+      padding: 16px 24px;
     }
+
     .addButton {
       padding: 0;
+      color: #0A3861;
+
+      &:hover {
+        color: #A8232F;
+      }
     }
   }
+
   .toBeAddedCardDark {
-    border-radius: 24px;
-    border: 1px solid #eaecf0;
-    background: #e3f0ff2a;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 56, 97, 0.2);
+
     :global(.ant-card-body) {
       padding: 10px 24px;
     }
+
     .addButton {
       padding: 0;
+      color: #FFFFFF;
+
+      &:hover {
+        color: #A8232F;
+      }
     }
   }
+
   .addedCard {
-    border-radius: 18px;
-    border: 1px solid #eaecf0;
-    background: #e6e7eb;
+    border-radius: 8px;
+    border: 1px solid rgba(10, 56, 97, 0.1);
+    background: #FFFFFF;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
+
   .addedCardDark {
-    border-radius: 18px;
-    border: 1px solid #eaecf0;
-    background: #e6e7eb21;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 56, 97, 0.1);
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
+
   .modelDivider {
-    margin: 0;
+    margin: 16px 0;
+    border-color: rgba(10, 56, 97, 0.1);
   }
+
   .modelTags {
     height: 40px;
     overflow: hidden;
-    font-size: 8px;
+    font-size: 12px;
+    color: #0A3861;
   }
 }

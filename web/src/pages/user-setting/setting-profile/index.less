@@ -1,5 +1,43 @@
 .profileWrapper {
-  width: 100%;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  :global {
+    .ant-form-item-label>label {
+      color: #0A3861;
+      font-weight: 500;
+    }
+
+    .ant-input,
+    .ant-select-selector {
+      border-color: rgba(10, 56, 97, 0.2);
+      border-radius: 6px;
+
+      &:hover,
+      &:focus {
+        border-color: #A8232F !important;
+        box-shadow: 0 0 0 2px rgba(168, 35, 47, 0.1) !important;
+      }
+    }
+
+    .ant-upload-picture-card-wrapper {
+      .ant-upload.ant-upload-select {
+        border-color: #0A3861;
+        border-radius: 8px;
+
+        &:hover {
+          border-color: #A8232F;
+        }
+      }
+    }
+
+    .ant-divider {
+      margin: 24px 0;
+    }
+  }
+
   .emailDescription {
     padding: 10px 0;
     margin: 0;

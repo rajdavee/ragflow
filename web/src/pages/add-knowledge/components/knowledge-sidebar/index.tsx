@@ -116,25 +116,33 @@ const KnowledgeSidebar = () => {
     <div className={styles.sidebarWrapper}>
       <div className={styles.sidebarTop}>
         <Space size={8} direction="vertical">
-          <Avatar size={64} src={knowledgeDetails.avatar} />
-          <div className={styles.knowledgeTitle}>{knowledgeDetails.name}</div>
+          <Avatar
+            size={64}
+            src={knowledgeDetails.avatar}
+            style={{ border: '2px solid #0A3861' }}
+          />
+          <div className={styles.knowledgeTitle} style={{ color: '#0A3861' }}>
+            {knowledgeDetails.name}
+          </div>
         </Space>
-        <p className={styles.knowledgeDescription}>
+        <p className={styles.knowledgeDescription} style={{ color: '#0A3861', opacity: 0.7 }}>
           {knowledgeDetails.description}
         </p>
       </div>
-      <div className={styles.divider}></div>
+      <div className={styles.divider} />
       <div className={styles.menuWrapper}>
         <Menu
           selectedKeys={[activeKey]}
-          // mode="inline"
           className={classNames(styles.menu, {
             [styles.defaultWidth]: windowWidth.width > 957,
             [styles.minWidth]: windowWidth.width <= 957,
           })}
-          // inlineCollapsed={collapsed}
           items={items}
           onSelect={handleSelect}
+          style={{
+            backgroundColor: 'transparent',
+            borderRight: 'none'
+          }}
         />
       </div>
     </div>

@@ -1,25 +1,62 @@
 .testingControlWrapper {
-  width: 350px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px 20px;
-  overflow: auto;
-  height: calc(100vh - 160px);
+  width: 320px;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  :global {
+    .ant-form-item-label>label {
+      color: #0A3861;
+      font-weight: 500;
+    }
+
+    .ant-slider {
+      .ant-slider-track {
+        background-color: #0A3861;
+      }
+
+      .ant-slider-handle:focus {
+        border-color: #0A3861;
+        box-shadow: 0 0 0 2px rgba(10, 56, 97, 0.2);
+      }
+    }
+
+    .ant-input-textarea {
+
+      &:hover,
+      &:focus {
+        border-color: #A8232F;
+      }
+    }
+
+    .ant-btn-primary {
+      &:not(:disabled):hover {
+        background-color: #A8232F;
+      }
+    }
+  }
 
   .historyTitle {
     padding: 30px 0 20px;
   }
+
   .historyIcon {
     vertical-align: middle;
   }
+
   .historyCardWrapper {
     width: 100%;
   }
+
   .historyCard {
     width: 100%;
+
     :global(.ant-card-body) {
       padding: 10px;
     }
   }
+
   .historyText {
     overflow: hidden;
     text-overflow: ellipsis;

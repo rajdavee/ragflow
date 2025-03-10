@@ -1,0 +1,43 @@
+.toolbarWrapper {
+    padding: 0 24px;
+
+    .searchBox {
+        width: 320px;
+
+        :global {
+            .ant-input {
+                border-color: rgba(10, 56, 97, 0.2);
+                border-radius: 6px;
+
+                &:hover,
+                &:focus {
+                    border-color: #A8232F;
+                }
+            }
+        }
+    }
+
+    .actionButtons {
+        :global {
+            .ant-btn {
+                border-color: rgba(10, 56, 97, 0.2);
+
+                &:hover {
+                    color: #A8232F;
+                    border-color: #A8232F;
+                }
+            }
+
+            .ant-btn-primary {
+                background-color: #0A3861;
+                border-color: #0A3861;
+                color: #FFFFFF;
+
+                &:hover {
+                    background-color: #A8232F;
+                    border-color: #A8232F;
+                }
+            }
+        }
+    }
+}

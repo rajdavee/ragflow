@@ -13,17 +13,24 @@
 }
 
 .logoWrapper {
-  .pointerCursor;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .appIcon {
-  vertical-align: middle;
-  max-width: 36px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .appName {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   vertical-align: middle;
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -38,34 +45,56 @@
     background-color: rgba(249, 249, 249, 1);
     font-weight: @fontWeight700;
     color: rgba(29, 25, 41, 1);
+
     &::before {
       display: none !important;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked) {
     border-radius: 6px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark) {
     border-radius: 0px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark.first) {
     border-top-left-radius: 6px !important;
     border-bottom-left-radius: 6px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark.last) {
     border-top-right-radius: 6px !important;
     border-bottom-right-radius: 6px !important;
+
     & a {
       color: white;
+    }
+  }
+
+  :global {
+    .ant-radio-button-wrapper {
+      &:hover {
+        color: #A8232F !important;
+        background-color: rgba(10, 56, 97, 0.05) !important;
+      }
+
+      &:focus-within {
+        box-shadow: none;
+      }
     }
   }
 }
@@ -78,34 +107,52 @@
     background-color: rgba(249, 249, 249, 0.25);
     font-weight: @fontWeight700;
     color: rgba(29, 25, 41, 1);
+
     &::before {
       display: none !important;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked) {
     border-radius: 6px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark) {
     border-radius: 0px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark.first) {
     border-top-left-radius: 6px !important;
     border-bottom-left-radius: 6px !important;
+
     & a {
       color: white;
     }
   }
+
   :global(.ant-radio-button-wrapper-checked.dark.last) {
     border-top-right-radius: 6px !important;
     border-bottom-right-radius: 6px !important;
+
     & a {
       color: white;
+    }
+  }
+
+  :global {
+    .ant-radio-button-wrapper {
+      &:hover {
+        color: #FFFFFF !important;
+        background-color: rgba(168, 35, 47, 0.8) !important;
+      }
     }
   }
 }
@@ -113,7 +160,11 @@
 .ant-radio-button-wrapper-checked {
   border-radius: 6px !important;
 }
+
 .radioButtonIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
   max-width: 15px;
   max-height: 15px;

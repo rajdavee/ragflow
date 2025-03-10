@@ -22,11 +22,26 @@ const SettingTitle = ({
   return (
     <Flex align="center" justify={'space-between'}>
       <div>
-        <Title level={5}>{title}</Title>
-        <Paragraph>{description}</Paragraph>
+        <Title level={5} style={{ color: '#0A3861', marginBottom: '8px' }}>
+          {title}
+        </Title>
+        <Paragraph style={{ color: '#0A3861', opacity: 0.7 }}>
+          {description}
+        </Paragraph>
       </div>
       {showRightButton && (
-        <Button type={'primary'} onClick={clickButton}>
+        <Button
+          type={'primary'}
+          onClick={clickButton}
+          style={{
+            backgroundColor: '#0A3861',
+            borderColor: '#0A3861',
+            '&:hover': {
+              backgroundColor: '#A8232F',
+              borderColor: '#A8232F'
+            }
+          }}
+        >
           <Flex align="center" gap={4}>
             <SettingOutlined />
             {t('systemModelSettings')}

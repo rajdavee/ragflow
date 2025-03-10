@@ -31,21 +31,34 @@ const TestingControl = ({ form, handleTesting }: IProps) => {
   return (
     <section className={styles.testingControlWrapper}>
       <div>
-        <b>{t('testing')}</b>
+        <b style={{ color: '#0A3861' }}>{t('testing')}</b>
       </div>
-      <p>{t('testingDescription')}</p>
-      <Divider></Divider>
+      <p style={{ color: '#0A3861', opacity: 0.7 }}>{t('testingDescription')}</p>
+      <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.1)' }} />
       <section>
         <Form name="testing" layout="vertical" form={form}>
-          <SimilaritySlider isTooltipShown></SimilaritySlider>
-          <Rerank></Rerank>
-          <UseKnowledgeGraphItem filedName={['use_kg']}></UseKnowledgeGraphItem>
-          <Card size="small" title={t('testText')}>
+          <SimilaritySlider isTooltipShown />
+          <Rerank />
+          <UseKnowledgeGraphItem filedName={['use_kg']} />
+          <Card
+            size="small"
+            title={t('testText')}
+            style={{
+              borderColor: 'rgba(10, 56, 97, 0.2)',
+              borderRadius: '8px'
+            }}
+          >
             <Form.Item<FieldType>
               name={'question'}
               rules={[{ required: true, message: t('testTextPlaceholder') }]}
             >
-              <Input.TextArea autoSize={{ minRows: 8 }}></Input.TextArea>
+              <Input.TextArea
+                autoSize={{ minRows: 8 }}
+                style={{
+                  borderColor: 'rgba(10, 56, 97, 0.2)',
+                  borderRadius: '6px'
+                }}
+              />
             </Form.Item>
             <Flex justify={'end'}>
               <Button
@@ -54,6 +67,15 @@ const TestingControl = ({ form, handleTesting }: IProps) => {
                 onClick={handleTesting}
                 disabled={buttonDisabled}
                 loading={loading}
+                style={{
+                  backgroundColor: '#0A3861',
+                  borderColor: '#0A3861',
+                  borderRadius: '6px',
+                  '&:hover': {
+                    backgroundColor: '#A8232F',
+                    borderColor: '#A8232F'
+                  }
+                }}
               >
                 {t('testingLabel')}
               </Button>
@@ -61,36 +83,7 @@ const TestingControl = ({ form, handleTesting }: IProps) => {
           </Card>
         </Form>
       </section>
-      <LabelWordCloud></LabelWordCloud>
-      {/* <section>
-        <div className={styles.historyTitle}>
-          <Space size={'middle'}>
-            <HistoryOutlined className={styles.historyIcon} />
-            <b>Test history</b>
-          </Space>
-        </div>
-        <Space
-          direction="vertical"
-          size={'middle'}
-          className={styles.historyCardWrapper}
-        >
-          {list.map((x) => (
-            <Card className={styles.historyCard} key={x}>
-              <Flex justify={'space-between'} gap={'small'}>
-                <span>{x}</span>
-                <div className={styles.historyText}>
-                  content dcjsjl snldsh svnodvn svnodrfn svjdoghdtbnhdo
-                  sdvhodhbuid sldghdrlh
-                </div>
-                <Flex gap={'small'}>
-                  <span>time</span>
-                  <DeleteOutlined></DeleteOutlined>
-                </Flex>
-              </Flex>
-            </Card>
-          ))}
-        </Space>
-      </section> */}
+      <LabelWordCloud />
     </section>
   );
 };

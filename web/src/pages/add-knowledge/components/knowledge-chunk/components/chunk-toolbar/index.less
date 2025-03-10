@@ -1,0 +1,47 @@
+.toolbarWrapper {
+    padding: 16px 24px;
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    :global {
+        .ant-btn {
+            border-color: rgba(10, 56, 97, 0.2);
+
+            &:hover {
+                border-color: #A8232F;
+                color: #A8232F;
+            }
+        }
+
+        .ant-btn-primary {
+            background-color: #0A3861;
+            border-color: #0A3861;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #A8232F;
+                border-color: #A8232F;
+            }
+        }
+
+        .ant-segmented {
+            background-color: #F5F7FA;
+
+            .ant-segmented-item-selected {
+                background-color: #0A3861;
+                color: #FFFFFF;
+            }
+        }
+
+        .ant-input-search {
+            .ant-input {
+                border-color: rgba(10, 56, 97, 0.2);
+
+                &:hover,
+                &:focus {
+                    border-color: #A8232F;
+                }
+            }
+        }
+    }
+}

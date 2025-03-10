@@ -1,4 +1,38 @@
 .testingWrapper {
-  flex: 1;
   height: 100%;
+  padding: 24px;
+  background: #FFFFFF;
+
+  :global {
+    .ant-card {
+      border-color: rgba(10, 56, 97, 0.1);
+      border-radius: 8px;
+
+      .ant-card-head {
+        border-bottom-color: rgba(10, 56, 97, 0.1);
+      }
+    }
+
+    .ant-input,
+    .ant-input-textarea {
+      border-color: rgba(10, 56, 97, 0.2);
+      border-radius: 6px;
+
+      &:hover,
+      &:focus {
+        border-color: #A8232F;
+        box-shadow: 0 0 0 2px rgba(168, 35, 47, 0.1);
+      }
+    }
+
+    .ant-btn-primary {
+      background-color: #0A3861;
+      border-color: #0A3861;
+
+      &:hover {
+        background-color: #A8232F;
+        border-color: #A8232F;
+      }
+    }
+  }
 }

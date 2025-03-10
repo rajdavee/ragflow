@@ -12,3 +12,35 @@
 .chunkMethod {
   margin-bottom: 0;
 }
+
+.modalWrapper {
+  :global {
+    .ant-modal-content {
+      border-radius: 8px;
+    }
+
+    .ant-form-item-label>label {
+      color: #0A3861;
+      font-weight: 500;
+    }
+
+    .ant-select-selector {
+      border-color: rgba(10, 56, 97, 0.2) !important;
+      border-radius: 6px;
+
+      &:hover {
+        border-color: #A8232F !important;
+      }
+    }
+
+    .ant-btn-primary {
+      background-color: #0A3861;
+      border-color: #0A3861;
+
+      &:hover {
+        background-color: #A8232F;
+        border-color: #A8232F;
+      }
+    }
+  }
+}

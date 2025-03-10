@@ -1,19 +1,35 @@
 .container {
   display: flex;
   height: 100%;
-  width: 100%;
+  gap: 24px;
+  padding: 24px;
+  background: #F5F7FA;
+
   .contentWrapper {
     flex: 1;
-    overflow-x: auto;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 16px 20px 28px 40px;
     display: flex;
     flex-direction: column;
-  }
-  .content {
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-top: 16px;
-    flex: 1;
+    gap: 16px;
+    overflow: hidden;
+
+    :global(.ant-breadcrumb) {
+      color: #0A3861;
+
+      a {
+        color: #0A3861;
+
+        &:hover {
+          color: #A8232F;
+        }
+      }
+    }
+
+    .content {
+      flex: 1;
+      overflow: hidden;
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
   }
 }

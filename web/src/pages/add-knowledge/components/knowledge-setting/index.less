@@ -23,10 +23,56 @@
 }
 
 .configurationWrapper {
-  padding: 0 52px;
-  .buttonWrapper {
-    text-align: right;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h5 {
+    color: #0A3861;
+    margin-bottom: 8px;
   }
+
+  p {
+    color: #0A3861;
+    opacity: 0.7;
+  }
+
+  :global {
+    .ant-form-item-label>label {
+      color: #0A3861;
+      font-weight: 500;
+    }
+
+    .ant-input,
+    .ant-select-selector {
+      border-color: rgba(10, 56, 97, 0.2);
+      border-radius: 6px;
+
+      &:hover,
+      &:focus {
+        border-color: #A8232F;
+        box-shadow: 0 0 0 2px rgba(168, 35, 47, 0.1);
+      }
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 24px;
+
+    .ant-btn-primary {
+      background-color: #0A3861;
+      border-color: #0A3861;
+
+      &:hover {
+        background-color: #A8232F;
+        border-color: #A8232F;
+      }
+    }
+  }
+
   .variableSlider {
     width: 100%;
   }
@@ -36,9 +82,11 @@
   .topTitle {
     margin-top: 0;
   }
+
   .imageRow {
     margin-top: 16px;
   }
+
   .image {
     width: 100%;
   }

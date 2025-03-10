@@ -69,8 +69,12 @@ const UserSettingProfile = () => {
       <SettingTitle
         title={t('profile')}
         description={t('profileDescription')}
-      ></SettingTitle>
-      <Divider />
+        style={{
+          color: '#0A3861',
+          marginBottom: '24px'
+        }}
+      />
+      <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.1)' }} />
       <Spin spinning={loading}>
         <Form
           colon={false}
@@ -78,7 +82,11 @@ const UserSettingProfile = () => {
           labelAlign={'left'}
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 16 }}
-          style={{ width: '100%' }}
+          style={{
+            width: '100%',
+            maxWidth: '800px',
+            margin: '0 auto'
+          }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -190,12 +198,28 @@ const UserSettingProfile = () => {
             }
           >
             <Space>
-              <Button htmlType="button">{t('cancel')}</Button>
+              <Button
+                htmlType="button"
+                style={{
+                  borderColor: '#0A3861',
+                  color: '#0A3861'
+                }}
+              >
+                {t('cancel')}
+              </Button>
               <Button
                 type="primary"
                 htmlType="submit"
                 disabled={!submittable}
                 loading={submitLoading}
+                style={{
+                  backgroundColor: '#0A3861',
+                  borderColor: '#0A3861',
+                  '&:hover': {
+                    backgroundColor: '#A8232F',
+                    borderColor: '#A8232F'
+                  }
+                }}
               >
                 {t('save', { keyPrefix: 'common' })}
               </Button>

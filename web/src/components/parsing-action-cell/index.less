@@ -1,0 +1,26 @@
+.iconButton {
+    color: #0A3861;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #A8232F;
+        opacity: 1;
+    }
+
+    &:disabled {
+        color: rgba(10, 56, 97, 0.3);
+    }
+}
+
+.actionDropdown {
+    :global {
+        .ant-dropdown-menu-item {
+            color: #0A3861;
+
+            &:hover {
+                background-color: rgba(10, 56, 97, 0.05);
+            }
+        }
+    }
+}
