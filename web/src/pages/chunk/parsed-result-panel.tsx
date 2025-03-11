@@ -6,7 +6,7 @@ const list = new Array(10).fill({
   content: `Word并不像 TeX／LaTeX为我们提供了合适的定理环境，因此需要我们另想办法。
   
   第1节 自定义定理环境
-  我们已经使用了“定理样式”作为定理排版的样式，如：
+  我们已经使用了"定理样式"作为定理排版的样式，如：
   
   定理1.1．对顶角相等。
   
@@ -19,9 +19,9 @@ const list = new Array(10).fill({
 
 export default function ParsedResultPanel() {
   return (
-    <div className="flex-1 py-6 border-l space-y-6">
-      <ChunkToolbar text="Parsed  results"></ChunkToolbar>
-      <div className="space-y-6  overflow-auto max-h-[87vh] px-9">
+    <div className="flex-1 py-6 border-l space-y-6 resultPanel">
+      <ChunkToolbar text="Parsed results"></ChunkToolbar>
+      <div className="space-y-6 overflow-auto max-h-[87vh] px-9 scrollContainer">
         {list.map((x, idx) => (
           <ParsedPageCard
             key={idx}

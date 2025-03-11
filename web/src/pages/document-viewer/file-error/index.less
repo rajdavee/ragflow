@@ -1,4 +1,34 @@
+// Define brand colors
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .errorWrapper {
   width: 100%;
   height: 100%;
+  background-color: rgba(10, 56, 97, 0.05);
+  padding: 20px;
+
+  :global(.ant-alert) {
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid @brand-red;
+
+    &.ant-alert-error {
+      background-color: #FEF2F3;
+      border-color: @brand-red;
+
+      h2 {
+        color: @brand-red;
+        font-weight: 500;
+      }
+
+      .ant-alert-message {
+        color: @brand-red;
+      }
+
+      .ant-alert-icon {
+        color: @brand-red;
+      }
+    }
+  }
 }

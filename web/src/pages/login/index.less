@@ -1,13 +1,21 @@
 @import '../../theme/vars';
 
+// Define brand colors
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+@brand-blue-light: rgba(10, 56, 97, 0.1);
+@brand-blue-medium: rgba(10, 56, 97, 0.6);
+@brand-blue-dark: #072a49;
+@brand-red-light: #f8e6e7;
+
 .loginPage {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #f5f7fa;
 
   .loginLeft {
-    // width: 610px;
     width: 40%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(10, 56, 97, 0.08);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -15,8 +23,60 @@
 
   .leftContainer {
     width: 60%;
-    padding: 5px, 0px, 5px, 0px;
+    padding: 25px 0;
     margin: 0 auto;
+
+    :global(.ant-form-item-label > label) {
+      color: @brand-blue;
+      font-weight: 500;
+    }
+
+    :global(.ant-input) {
+      border-color: rgba(10, 56, 97, 0.2);
+      border-radius: 4px;
+
+      &:hover,
+      &:focus {
+        border-color: @brand-blue;
+        box-shadow: 0 0 0 2px rgba(10, 56, 97, 0.1);
+      }
+    }
+
+    :global(.ant-btn-primary) {
+      background-color: @brand-blue;
+      border-color: @brand-blue;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: @brand-blue-dark;
+        border-color: @brand-blue-dark;
+        box-shadow: 0 4px 8px rgba(10, 56, 97, 0.25);
+      }
+    }
+
+    :global(.ant-btn-default) {
+      border: 1px solid @brand-blue;
+      color: @brand-blue;
+
+      &:hover {
+        color: @brand-red;
+        border-color: @brand-red;
+      }
+    }
+
+    :global(.ant-checkbox-checked .ant-checkbox-inner) {
+      background-color: @brand-blue;
+      border-color: @brand-blue;
+    }
+
+    :global(.ant-btn-link) {
+      color: @brand-red;
+
+      &:hover {
+        color: lighten(@brand-red, 10%);
+        text-decoration: underline;
+      }
+    }
   }
 
   .loginRight {
@@ -25,6 +85,7 @@
     justify-content: center;
     flex: 1;
     position: relative;
+
     &::before {
       content: ' ';
       position: absolute;
@@ -32,7 +93,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: rgba(24, 73, 169, 0.6);
+      background-color: @brand-blue-medium;
       background-image: url('@/assets/svg/login-background.svg');
       background-size: cover;
       background-blend-mode: multiply;
@@ -40,13 +101,25 @@
       background-position: center;
       z-index: -1;
     }
+
     .white {
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
+
     .pink {
-      color: #e9d7fe;
+      color: @brand-red-light;
     }
+
     .rightPanel {
       max-width: 670px;
+      padding: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(10, 56, 97, 0.8) 0%, rgba(10, 56, 97, 0.6) 100%);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
       .loginTitle {
         font-size: 68px;
         font-style: normal;
@@ -54,18 +127,21 @@
         line-height: 90px;
         letter-spacing: -1.44px;
       }
+
       .loginDescription {
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
         line-height: 30px;
       }
+
       .loginRateNumber {
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: 24px;
       }
+
       .loginRateReviews {
         font-size: 16px;
         font-style: normal;
@@ -76,18 +152,20 @@
   }
 
   .loginTitle {
-    //styleName: Heading/1;
     font-size: 38px;
     font-weight: 600;
     line-height: 46px;
     letter-spacing: 0em;
     height: 80px;
     margin-bottom: 69px;
+    color: @brand-blue;
 
-    // text-align: center;
     span {
       font-size: 16px;
       line-height: 24px;
+      color: @brand-red;
+      margin-top: 8px;
+      display: block;
     }
   }
 

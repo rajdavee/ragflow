@@ -9,10 +9,10 @@ interface ParsedPageCardProps {
 
 export function ParsedPageCard({ page, content }: ParsedPageCardProps) {
   return (
-    <Card className="bg-colors-outline-neutral-standard border-colors-outline-neutral-strong rounded-3xl">
+    <Card className="parsedCard">
       <CardContent className="p-4">
-        <p className="text-colors-text-neutral-standard text-base">{page}</p>
-        <div className="text-colors-text-neutral-strong text-lg mt-2">
+        <p className="text-base cardTitle">{page}</p>
+        <div className="text-lg mt-2 cardContent">
           {content}
         </div>
       </CardContent>
@@ -27,16 +27,16 @@ interface ChunkCardProps {
 
 export function ChunkCard({ content }: ChunkCardProps) {
   return (
-    <Card className="bg-colors-outline-neutral-standard border-colors-outline-neutral-strong rounded-3xl">
+    <Card className="chunkCard">
       <CardContent className="p-4">
         <div className="flex justify-between items-center">
-          <Annoyed />
+          <Annoyed className="cardIcon" />
           <div className="flex items-center space-x-2">
-            <Switch />
-            <span className="text-colors-text-neutral-strong">Active</span>
+            <Switch className="switch" />
+            <span className="switchLabel">Active</span>
           </div>
         </div>
-        <div className="text-colors-text-neutral-strong text-lg mt-2 line-clamp-4">
+        <div className="text-lg mt-2 line-clamp-4 content">
           {content}
         </div>
       </CardContent>

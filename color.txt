@@ -1,3 +1,27 @@
 #0A3861---blue
-
 #A8232F--red
+
+UI ENHANCEMENT PROMPT:
+I'm working on a large application that needs UI enhancement. The colors above (#0A3861 blue and #A8232F red) are my primary brand colors that must be used for the UI improvements.
+
+Instructions for AI:
+1. I will provide files one by one from my application.
+2. For each file, ONLY enhance the visual appearance and UI elements using the two primary colors specified above.
+3. Do NOT modify any functionality, logic, or backend operations of the application.
+4. Do NOT create any new files - only implement changes in the existing files I provide.
+5. Make sure your changes don't affect the application's performance or introduce any issues.
+6. Focus on improving visual hierarchy, color contrast, accessibility, and overall aesthetic appeal.
+7. If a file cannot be improved without affecting functionality, explain why and suggest minimal safe changes.
+
+Detailed UI Enhancement Guidelines:
+8. Create a cohesive design system using these colors: use #0A3861 (blue) for primary actions/headers and #A8232F (red) for accents/calls-to-action.
+9. Apply appropriate color gradients, shadows, and highlights derived from these colors.
+10. Enhance buttons, forms, cards, and navigation elements with these colors to create visual hierarchy.
+11. Improve spacing, padding, and margins to create better visual balance.
+12. Ensure sufficient contrast ratios between text and backgrounds for accessibility.
+13. Implement hover/focus states using lighter/darker variations of these colors.
+14. Use these colors for borders, dividers, and visual indicators to create a unified look.
+15. Add subtle animations or transitions that incorporate these colors where appropriate.
+16. Consider creating secondary/tertiary colors that complement these primary colors for backgrounds and less important elements.
+
+The application is extensive, so strictly adhere to these guidelines when enhancing each file.

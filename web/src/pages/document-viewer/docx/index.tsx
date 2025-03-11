@@ -12,7 +12,10 @@ const Docx = ({ filePath }: { filePath: string }) => {
       {succeed ? (
         <section className={styles.docxViewerWrapper}>
           <div id="docx" ref={containerRef} className={styles.box}>
-            <Spin />
+            <Spin tip="Loading document" style={{
+              color: '#0A3861',
+              marginTop: '100px'
+            }} />
           </div>
         </section>
       ) : (

@@ -100,44 +100,44 @@ const Chat = () => {
 
   const handleShowChatConfigurationModal =
     (dialogId?: string): any =>
-    (info: any) => {
-      info?.domEvent?.preventDefault();
-      info?.domEvent?.stopPropagation();
-      showDialogEditModal(dialogId);
-    };
+      (info: any) => {
+        info?.domEvent?.preventDefault();
+        info?.domEvent?.stopPropagation();
+        showDialogEditModal(dialogId);
+      };
 
   const handleRemoveDialog =
     (dialogId: string): MenuItemProps['onClick'] =>
-    ({ domEvent }) => {
-      domEvent.preventDefault();
-      domEvent.stopPropagation();
-      onRemoveDialog([dialogId]);
-    };
+      ({ domEvent }) => {
+        domEvent.preventDefault();
+        domEvent.stopPropagation();
+        onRemoveDialog([dialogId]);
+      };
 
   const handleShowOverviewModal =
     (dialog: IDialog): any =>
-    (info: any) => {
-      info?.domEvent?.preventDefault();
-      info?.domEvent?.stopPropagation();
-      setRecord(dialog);
-      showEmbedModal();
-    };
+      (info: any) => {
+        info?.domEvent?.preventDefault();
+        info?.domEvent?.stopPropagation();
+        setRecord(dialog);
+        showEmbedModal();
+      };
 
   const handleRemoveConversation =
     (conversationId: string): MenuItemProps['onClick'] =>
-    ({ domEvent }) => {
-      domEvent.preventDefault();
-      domEvent.stopPropagation();
-      onRemoveConversation([conversationId]);
-    };
+      ({ domEvent }) => {
+        domEvent.preventDefault();
+        domEvent.stopPropagation();
+        onRemoveConversation([conversationId]);
+      };
 
   const handleShowConversationRenameModal =
     (conversationId: string): MenuItemProps['onClick'] =>
-    ({ domEvent }) => {
-      domEvent.preventDefault();
-      domEvent.stopPropagation();
-      showConversationRenameModal(conversationId);
-    };
+      ({ domEvent }) => {
+        domEvent.preventDefault();
+        domEvent.stopPropagation();
+        showConversationRenameModal(conversationId);
+      };
 
   const handleDialogCardClick = useCallback(
     (dialogId: string) => () => {
@@ -170,8 +170,8 @@ const Chat = () => {
         onClick: handleShowChatConfigurationModal(dialogId),
         label: (
           <Space>
-            <EditOutlined />
-            {t('edit', { keyPrefix: 'common' })}
+            <EditOutlined style={{ color: '#0A3861' }} />
+            <span style={{ color: '#0A3861' }}>{t('edit', { keyPrefix: 'common' })}</span>
           </Space>
         ),
       },
@@ -181,8 +181,8 @@ const Chat = () => {
         onClick: handleRemoveDialog(dialogId),
         label: (
           <Space>
-            <DeleteOutlined />
-            {t('delete', { keyPrefix: 'common' })}
+            <DeleteOutlined style={{ color: '#A8232F' }} />
+            <span style={{ color: '#A8232F' }}>{t('delete', { keyPrefix: 'common' })}</span>
           </Space>
         ),
       },
@@ -192,9 +192,8 @@ const Chat = () => {
         onClick: handleShowOverviewModal(dialog),
         label: (
           <Space>
-            {/* <KeyOutlined /> */}
-            <PictureInPicture2 className="size-4" />
-            {t('embedIntoSite', { keyPrefix: 'common' })}
+            <PictureInPicture2 className="size-4" style={{ color: '#0A3861' }} />
+            <span style={{ color: '#0A3861' }}>{t('embedIntoSite', { keyPrefix: 'common' })}</span>
           </Space>
         ),
       },
@@ -210,8 +209,8 @@ const Chat = () => {
         onClick: handleShowConversationRenameModal(conversationId),
         label: (
           <Space>
-            <EditOutlined />
-            {t('rename', { keyPrefix: 'common' })}
+            <EditOutlined style={{ color: '#0A3861' }} />
+            <span style={{ color: '#0A3861' }}>{t('rename', { keyPrefix: 'common' })}</span>
           </Space>
         ),
       },
@@ -221,8 +220,8 @@ const Chat = () => {
         onClick: handleRemoveConversation(conversationId),
         label: (
           <Space>
-            <DeleteOutlined />
-            {t('delete', { keyPrefix: 'common' })}
+            <DeleteOutlined style={{ color: '#A8232F' }} />
+            <span style={{ color: '#A8232F' }}>{t('delete', { keyPrefix: 'common' })}</span>
           </Space>
         ),
       },
@@ -235,10 +234,21 @@ const Chat = () => {
     <Flex className={styles.chatWrapper}>
       <Flex className={styles.chatAppWrapper}>
         <Flex flex={1} vertical>
-          <Button type="primary" onClick={handleShowChatConfigurationModal()}>
+          <Button
+            type="primary"
+            onClick={handleShowChatConfigurationModal()}
+            style={{
+              backgroundColor: '#0A3861',
+              borderColor: '#0A3861',
+              boxShadow: '0 2px 8px rgba(10, 56, 97, 0.2)',
+              height: '40px',
+              borderRadius: '6px',
+              fontWeight: 500
+            }}
+          >
             {t('createAssistant')}
           </Button>
-          <Divider></Divider>
+          <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.15)' }}></Divider>
           <Flex className={styles.chatAppContent} vertical gap={10}>
             <Spin spinning={dialogLoading} wrapperClassName={styles.chatSpin}>
               {dialogList.map((x) => (
@@ -253,20 +263,31 @@ const Chat = () => {
                   onMouseEnter={handleAppCardEnter(x.id)}
                   onMouseLeave={handleItemLeave}
                   onClick={handleDialogCardClick(x.id)}
+                  style={{
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 8px rgba(10, 56, 97, 0.08)'
+                  }}
                 >
                   <Flex justify="space-between" align="center">
                     <Space size={15}>
-                      <Avatar src={x.icon} shape={'square'} />
+                      <Avatar
+                        src={x.icon}
+                        shape={'square'}
+                        style={{
+                          border: '1px solid rgba(10, 56, 97, 0.1)',
+                          backgroundColor: x.icon ? 'transparent' : 'rgba(10, 56, 97, 0.05)'
+                        }}
+                      />
                       <section>
                         <b>
                           <Text
                             ellipsis={{ tooltip: x.name }}
-                            style={{ width: 130 }}
+                            style={{ width: 130, color: '#0A3861' }}
                           >
                             {x.name}
                           </Text>
                         </b>
-                        <div>{x.description}</div>
+                        <div style={{ color: 'rgba(10, 56, 97, 0.8)' }}>{x.description}</div>
                       </section>
                     </Space>
                     {activated === x.id && (
@@ -294,8 +315,8 @@ const Chat = () => {
             className={styles.chatTitle}
           >
             <Space>
-              <b>{t('chat')}</b>
-              <Tag>{conversationList.length}</Tag>
+              <b style={{ color: '#0A3861' }}>{t('chat')}</b>
+              <Tag color="#0A3861">{conversationList.length}</Tag>
             </Space>
             <Tooltip title={t('newChat')}>
               <div>
@@ -303,11 +324,12 @@ const Chat = () => {
                   name="plus-circle-fill"
                   width={20}
                   onClick={handleCreateTemporaryConversation}
+                  style={{ color: '#0A3861', cursor: 'pointer' }}
                 ></SvgIcon>
               </div>
             </Tooltip>
           </Flex>
-          <Divider></Divider>
+          <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.15)' }}></Divider>
           <Flex vertical gap={10} className={styles.chatTitleContent}>
             <Spin
               spinning={conversationLoading}
@@ -325,12 +347,17 @@ const Chat = () => {
                       ? styles.chatTitleCardSelectedDark
                       : styles.chatTitleCardSelected]: x.id === conversationId,
                   })}
+                  style={{
+                    border: '1px solid rgba(10, 56, 97, 0.1)',
+                    boxShadow: '0 2px 6px rgba(10, 56, 97, 0.05)',
+                    borderRadius: '6px'
+                  }}
                 >
                   <Flex justify="space-between" align="center">
                     <div>
                       <Text
                         ellipsis={{ tooltip: x.name }}
-                        style={{ width: 150 }}
+                        style={{ width: 150, color: '#0A3861' }}
                       >
                         {x.name}
                       </Text>

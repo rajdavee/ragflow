@@ -110,10 +110,10 @@ const ChatConfigurationModal = ({
   };
 
   const title = (
-    <Flex gap={16}>
-      <ChatConfigurationAtom></ChatConfigurationAtom>
+    <Flex gap={16} align="center">
+      <ChatConfigurationAtom style={{ color: '#0A3861' }} />
       <div>
-        <b>{t('chatConfiguration')}</b>
+        <b style={{ color: '#0A3861', fontSize: '16px' }}>{t('chatConfiguration')}</b>
         <div className={styles.chatConfigurationDescription}>
           {t('chatConfigurationDescription')}
         </div>
@@ -152,6 +152,15 @@ const ChatConfigurationModal = ({
       confirmLoading={loading}
       destroyOnClose
       afterClose={handleModalAfterClose}
+      okButtonProps={{
+        style: {
+          backgroundColor: '#0A3861',
+          borderColor: '#0A3861'
+        }
+      }}
+      bodyStyle={{
+        padding: '16px 24px'
+      }}
     >
       <Segmented
         size={'large'}
@@ -162,8 +171,13 @@ const ChatConfigurationModal = ({
           value: x,
         }))}
         block
+        style={{
+          backgroundColor: 'rgba(10, 56, 97, 0.04)',
+          padding: '6px',
+          borderRadius: '6px'
+        }}
       />
-      <Divider></Divider>
+      <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.1)', margin: '16px 0' }} />
       <Form
         {...layout}
         name="nest-messages"

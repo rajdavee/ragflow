@@ -93,12 +93,15 @@ const SearchPage = () => {
       loading={sendingLoading}
       disabled={checkedWithoutEmbeddingIdList.length === 0}
       className={isFirstRender ? styles.globalInput : styles.partialInput}
+      style={{
+        boxShadow: '0 4px 12px rgba(10, 56, 97, 0.1)'
+      }}
     />
   );
 
   return (
     <>
-      <Layout className={styles.searchPage}>
+      <Layout className={styles.searchPage} style={{ background: '#f5f7fa' }}>
         <SearchSidebar
           isFirstRender={isFirstRender}
           checkedList={checkedWithoutEmbeddingIdList}
@@ -118,12 +121,14 @@ const SearchPage = () => {
                   {InputSearch}
                   <Card
                     title={
-                      <Flex gap={10}>
+                      <Flex gap={10} align="center">
                         <img src="/logo.svg" alt="" width={20} />
-                        {t('chat.answerTitle')}
+                        <span style={{ color: '#0A3861', fontWeight: 500 }}>{t('chat.answerTitle')}</span>
                       </Flex>
                     }
                     className={styles.answerWrapper}
+                    headStyle={{ backgroundColor: 'rgba(10, 56, 97, 0.08)' }}
+                    bodyStyle={{ padding: '16px 20px' }}
                   >
                     {isEmpty(answer) && sendingLoading ? (
                       <Skeleton active />
@@ -138,13 +143,13 @@ const SearchPage = () => {
                       )
                     )}
                   </Card>
-                  <Divider></Divider>
+                  <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.15)' }}></Divider>
                   <RetrievalDocuments
                     selectedDocumentIds={selectedDocumentIds}
                     setSelectedDocumentIds={setSelectedDocumentIds}
                     onTesting={handleTestChunk}
                   ></RetrievalDocuments>
-                  <Divider></Divider>
+                  <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.15)' }}></Divider>
                   <Spin spinning={loading}>
                     {chunks?.length > 0 && (
                       <List
@@ -152,7 +157,13 @@ const SearchPage = () => {
                         className={styles.chunks}
                         renderItem={(item) => (
                           <List.Item>
-                            <Card className={styles.card}>
+                            <Card
+                              className={styles.card}
+                              style={{
+                                boxShadow: '0 2px 8px rgba(10, 56, 97, 0.06)',
+                                border: '1px solid rgba(10, 56, 97, 0.1)',
+                              }}
+                            >
                               <Space>
                                 <ImageWithPopover
                                   id={item.img_id}
@@ -189,7 +200,7 @@ const SearchPage = () => {
                                       id={item.image_id}
                                       name={item.docnm_kwd}
                                     ></FileIcon>
-                                    {item.docnm_kwd}
+                                    <span style={{ color: '#0A3861' }}>{item.docnm_kwd}</span>
                                   </Space>
                                 </Flex>
                               </Space>
@@ -200,7 +211,15 @@ const SearchPage = () => {
                     )}
                   </Spin>
                   {relatedQuestions?.length > 0 && (
-                    <Card title={t('chat.relatedQuestion')}>
+                    <Card
+                      title={<span style={{ color: '#0A3861' }}>{t('chat.relatedQuestion')}</span>}
+                      style={{
+                        marginTop: '20px',
+                        boxShadow: '0 2px 8px rgba(10, 56, 97, 0.08)',
+                        border: '1px solid rgba(10, 56, 97, 0.1)',
+                      }}
+                      headStyle={{ backgroundColor: 'rgba(10, 56, 97, 0.05)' }}
+                    >
                       <Flex wrap="wrap" gap={'10px 0'}>
                         {relatedQuestions?.map((x, idx) => (
                           <Tag
@@ -214,12 +233,19 @@ const SearchPage = () => {
                       </Flex>
                     </Card>
                   )}
-                  <Divider></Divider>
+                  <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.15)' }}></Divider>
                   <Pagination
                     {...pagination}
                     total={total}
                     onChange={onChange}
                     className={styles.pagination}
+                    style={{
+                      textAlign: 'center',
+                      '& .ant-pagination-item-active': {
+                        borderColor: '#0A3861',
+                        color: '#0A3861'
+                      }
+                    }}
                   />
                 </section>
               </Flex>
@@ -237,6 +263,10 @@ const SearchPage = () => {
               icon={
                 <SvgIcon name="paper-clip" width={24} height={30}></SvgIcon>
               }
+              style={{
+                backgroundColor: '#0A3861',
+                boxShadow: '0 6px 16px rgba(10, 56, 97, 0.25)',
+              }}
             />
           </Tooltip>
         )}

@@ -27,12 +27,19 @@ const DocumentViewer = () => {
     <section className={styles.viewerWrapper}>
       {Images.includes(ext!) && (
         <Flex className={styles.image} align="center" justify="center">
-          <Image src={api} preview={false}></Image>
+          <Image
+            src={api}
+            preview={false}
+            style={{
+              maxWidth: '90%',
+              objectFit: 'contain',
+              borderRadius: '4px'
+            }}
+          />
         </Flex>
       )}
       {ext === 'pdf' && <Pdf url={api}></Pdf>}
       {(ext === 'xlsx' || ext === 'xls') && <Excel filePath={api}></Excel>}
-
       {ext === 'docx' && <Docx filePath={api}></Docx>}
     </section>
   );

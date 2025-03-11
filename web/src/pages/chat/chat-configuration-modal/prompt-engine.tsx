@@ -123,6 +123,7 @@ const PromptEngine = (
             size="small"
             checked={text}
             onChange={handleOptionalChange(record)}
+            style={{ backgroundColor: text ? '#0A3861' : undefined }}
           />
         );
       },
@@ -134,7 +135,7 @@ const PromptEngine = (
       key: 'operation',
       align: 'center',
       render(_, record) {
-        return <DeleteOutlined onClick={handleRemove(record.key)} />;
+        return <DeleteOutlined onClick={handleRemove(record.key)} style={{ color: '#A8232F' }} />;
       },
     },
   ];
@@ -155,10 +156,17 @@ const PromptEngine = (
         tooltip={t('systemTip')}
         name={['prompt_config', 'system']}
         initialValue={t('systemInitialValue')}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Input.TextArea autoSize={{ maxRows: 8, minRows: 5 }} />
+        <Input.TextArea
+          autoSize={{ maxRows: 8, minRows: 5 }}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+            borderRadius: '4px',
+          }}
+        />
       </Form.Item>
-      <Divider></Divider>
+      <Divider style={{ borderColor: 'rgba(10, 56, 97, 0.1)' }}></Divider>
       <SimilaritySlider isTooltipShown></SimilaritySlider>
       <TopNItem></TopNItem>
       <Form.Item
@@ -166,8 +174,11 @@ const PromptEngine = (
         tooltip={t('multiTurnTip')}
         name={['prompt_config', 'refine_multiturn']}
         initialValue={true}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Switch></Switch>
+        <Switch
+          style={{ backgroundColor: '#0A3861' }}
+        />
       </Form.Item>
       <UseKnowledgeGraphItem
         filedName={['prompt_config', 'use_kg']}
@@ -177,8 +188,9 @@ const PromptEngine = (
         tooltip={t('reasoningTip')}
         name={['prompt_config', 'reasoning']}
         initialValue={false}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Switch></Switch>
+        <Switch style={{ backgroundColor: '#0A3861' }}></Switch>
       </Form.Item>
       <Rerank></Rerank>
       <section className={classNames(styles.variableContainer)}>
@@ -192,7 +204,16 @@ const PromptEngine = (
             </label>
           </Col>
           <Col span={15} className={styles.variableAlign}>
-            <Button size="small" onClick={handleAdd}>
+            <Button
+              size="small"
+              onClick={handleAdd}
+              style={{
+                backgroundColor: '#0A3861',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px'
+              }}
+            >
               {t('add')}
             </Button>
           </Col>
@@ -208,6 +229,7 @@ const PromptEngine = (
                 className={styles.variableTable}
                 components={components}
                 rowClassName={() => styles.editableRow}
+                pagination={false}
               />
             </Col>
           </Row>

@@ -137,6 +137,7 @@ const MarkdownContent = ({
                   <SvgIcon
                     name={`file-icon/${fileExtension}`}
                     width={24}
+                    style={{ color: '#0A3861' }}
                   ></SvgIcon>
                 )}
                 <Button
@@ -147,6 +148,7 @@ const MarkdownContent = ({
                     chunkItem,
                     fileExtension === 'pdf',
                   )}
+                  style={{ color: '#A8232F' }}
                 >
                   {document?.doc_name}
                 </Button>
@@ -192,11 +194,31 @@ const MarkdownContent = ({
             const { children, className, node, ...rest } = props;
             const match = /language-(\w+)/.exec(className || '');
             return match ? (
-              <SyntaxHighlighter {...rest} PreTag="div" language={match[1]}>
+              <SyntaxHighlighter
+                {...rest}
+                PreTag="div"
+                language={match[1]}
+                style={{
+                  'code[class*="language-"]': {
+                    color: '#0A3861',
+                  },
+                  'pre[class*="language-"]': {
+                    background: 'rgba(10, 56, 97, 0.05)',
+                    border: '1px solid rgba(10, 56, 97, 0.1)',
+                  }
+                }}
+              >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
-              <code {...rest} className={className}>
+              <code
+                {...rest}
+                className={className}
+                style={{
+                  color: '#0A3861',
+                  backgroundColor: 'rgba(10, 56, 97, 0.05)',
+                }}
+              >
                 {children}
               </code>
             );

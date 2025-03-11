@@ -1,0 +1,158 @@
+// Brand colors
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+@brand-blue-light: rgba(10, 56, 97, 0.05);
+@brand-blue-medium: rgba(10, 56, 97, 0.15);
+@brand-red-light: rgba(168, 35, 47, 0.05);
+
+.chunkPage {
+    background-color: #f5f7fa;
+
+    // Header styling
+    .pageHeader {
+        border-bottom: 1px solid @brand-blue-medium;
+        background-color: white;
+        box-shadow: 0 2px 6px rgba(10, 56, 97, 0.1);
+
+        .pageTitle {
+            color: @brand-blue;
+            font-weight: 600;
+        }
+
+        .segmented {
+            background-color: @brand-blue-light;
+            border-radius: 6px;
+            padding: 2px;
+
+            [data-state=active] {
+                background-color: white;
+                color: @brand-blue;
+                font-weight: 500;
+                box-shadow: 0 1px 3px rgba(10, 56, 97, 0.2);
+            }
+        }
+
+        .iconButton {
+            color: @brand-blue;
+            background-color: @brand-blue-light;
+
+            &:hover {
+                background-color: rgba(10, 56, 97, 0.1);
+            }
+        }
+
+        .saveButton {
+            background-color: @brand-red;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 4px rgba(168, 35, 47, 0.25);
+
+            &:hover {
+                background-color: darken(@brand-red, 10%);
+                box-shadow: 0 2px 8px rgba(168, 35, 47, 0.35);
+            }
+        }
+    }
+
+    // Panel styling
+    .resultPanel {
+        border-left: 1px solid @brand-blue-medium;
+        background: #f8f9fa;
+
+        .toolbar {
+            .toolbarTitle {
+                color: @brand-blue;
+                font-weight: 600;
+            }
+
+            .copyButton {
+                color: @brand-blue;
+                background-color: @brand-blue-light;
+
+                &:hover {
+                    background-color: rgba(10, 56, 97, 0.1);
+                }
+            }
+
+            .exportButton {
+                color: @brand-red;
+                border-color: @brand-red;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: @brand-red-light;
+                }
+            }
+        }
+
+        .scrollContainer {
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(10, 56, 97, 0.2);
+                border-radius: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: @brand-blue-light;
+            }
+        }
+    }
+
+    // Card styling
+    .parsedCard {
+        border: 1px solid @brand-blue-medium;
+        box-shadow: 0 2px 8px rgba(10, 56, 97, 0.08);
+        transition: all 0.2s ease;
+        border-radius: 12px;
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(10, 56, 97, 0.15);
+        }
+
+        .cardTitle {
+            color: @brand-red;
+            font-weight: 500;
+        }
+
+        .cardContent {
+            color: @brand-blue;
+            line-height: 1.6;
+        }
+    }
+
+    .chunkCard {
+        background-color: rgba(10, 56, 97, 0.03);
+        border: 1px solid @brand-blue-medium;
+        box-shadow: 0 2px 8px rgba(10, 56, 97, 0.08);
+        transition: all 0.2s ease;
+        border-radius: 12px;
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(10, 56, 97, 0.15);
+        }
+
+        .cardIcon {
+            color: @brand-blue;
+        }
+
+        .switch {
+            --switch-background-checked: @brand-blue;
+            --switch-ring-color: rgba(10, 56, 97, 0.25);
+        }
+
+        .switchLabel {
+            color: @brand-blue;
+            font-weight: 500;
+        }
+
+        .content {
+            color: @brand-blue;
+            line-height: 1.5;
+        }
+    }
+}

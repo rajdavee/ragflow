@@ -110,11 +110,23 @@ const SearchSidebar = ({
       return (
         <Space>
           {node.isLeaf && (
-            <Avatar size={24} icon={<UserOutlined />} src={item?.avatar} />
+            <Avatar
+              size={24}
+              icon={<UserOutlined style={{ color: '#0A3861' }} />}
+              src={item?.avatar}
+              style={{
+                border: '1px solid rgba(10, 56, 97, 0.2)',
+                backgroundColor: item?.avatar ? 'transparent' : 'rgba(10, 56, 97, 0.1)'
+              }}
+            />
           )}
           <Typography.Text
             ellipsis={{ tooltip: node.title as string }}
             className={node.isLeaf ? styles.knowledgeName : styles.embeddingId}
+            style={{
+              color: node.isLeaf ? '#0A3861' : '#A8232F',
+              fontWeight: node.isLeaf ? 'normal' : 500
+            }}
           >
             {node.title as string}
           </Typography.Text>
@@ -140,7 +152,7 @@ const SearchSidebar = ({
       theme={'light'}
       width={'20%'}
     >
-      <Spin spinning={loading}>
+      <Spin spinning={loading} tip="Loading..." style={{ color: '#0A3861' }}>
         <Tree
           className={styles.list}
           checkable

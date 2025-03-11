@@ -28,13 +28,13 @@ const ModelSetting = ({
         pre[field] =
           initialLlmSetting === undefined
             ? setInitialChatVariableEnabledFieldValue(
-                field as ChatVariableEnabledField,
-              )
+              field as ChatVariableEnabledField,
+            )
             : !!initialLlmSetting[
-                variableEnabledFieldMap[
-                  field as keyof typeof variableEnabledFieldMap
-                ] as keyof Variable
-              ];
+            variableEnabledFieldMap[
+            field as keyof typeof variableEnabledFieldMap
+            ] as keyof Variable
+            ];
         return pre;
       }, {});
       form.setFieldsValue(values);
@@ -46,6 +46,17 @@ const ModelSetting = ({
       className={classNames({
         [styles.segmentedHidden]: !show,
       })}
+      style={{
+        '& .ant-form-item-label > label': {
+          color: '#0A3861'
+        },
+        '& .ant-slider-track': {
+          backgroundColor: '#0A3861'
+        },
+        '& .ant-slider-handle::after': {
+          boxShadow: '0 0 0 2px #0A3861'
+        }
+      }}
     >
       {visible && <LlmSettingItems prefix="llm_setting"></LlmSettingItems>}
     </section>

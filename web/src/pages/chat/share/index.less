@@ -1,13 +1,76 @@
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .chatWrapper {
   height: 100%;
+  background-color: #f8f9fa;
+
+  :global(.ant-message-custom-content) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.ant-btn-primary) {
+    background-color: @brand-blue;
+    border-color: @brand-blue;
+
+    &:hover,
+    &:focus {
+      background-color: darken(@brand-blue, 10%);
+      border-color: darken(@brand-blue, 10%);
+      box-shadow: 0 2px 8px rgba(10, 56, 97, 0.2);
+    }
+  }
+
+  :global(.ant-input) {
+    border-color: rgba(10, 56, 97, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      border-color: @brand-blue;
+      box-shadow: 0 0 0 2px rgba(10, 56, 97, 0.1);
+    }
+  }
 }
 
 .chatContainer {
   padding: 10px;
   box-sizing: border-box;
   height: 100%;
+
   .messageContainer {
     overflow-y: auto;
     padding-right: 6px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(10, 56, 97, 0.05);
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(10, 56, 97, 0.2);
+      border-radius: 6px;
+
+      &:hover {
+        background-color: rgba(10, 56, 97, 0.4);
+      }
+    }
+  }
+
+  :global(.ant-message-item) {
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(10, 56, 97, 0.1);
+
+    .ant-message-content {
+      color: @brand-blue;
+    }
   }
 }

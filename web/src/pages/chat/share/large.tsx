@@ -61,7 +61,7 @@ const ChatContainer = () => {
       <Flex flex={1} className={styles.chatContainer} vertical>
         <Flex flex={1} vertical className={styles.messageContainer}>
           <div>
-            <Spin spinning={loading}>
+            <Spin spinning={loading} style={{ color: '#0A3861' }}>
               {derivedMessages?.map((message, i) => {
                 return (
                   <MessageItem
@@ -86,6 +86,12 @@ const ChatContainer = () => {
                     clickDocumentButton={clickDocumentButton}
                     showLikeButton={false}
                     showLoudspeaker={false}
+                    messageStyle={{
+                      backgroundColor: message.role === MessageType.Assistant ? 'rgba(10, 56, 97, 0.05)' : '#fff',
+                      border: '1px solid rgba(10, 56, 97, 0.1)',
+                      boxShadow: '0 2px 8px rgba(10, 56, 97, 0.08)',
+                      borderRadius: '8px'
+                    }}
                   ></MessageItem>
                 );
               })}
@@ -105,6 +111,23 @@ const ChatContainer = () => {
           sendLoading={sendLoading}
           uploadMethod="external_upload_and_parse"
           showUploadIcon={false}
+          style={{
+            '& .ant-input': {
+              borderColor: 'rgba(10, 56, 97, 0.2)',
+              '&:hover, &:focus': {
+                borderColor: '#0A3861',
+                boxShadow: '0 0 0 2px rgba(10, 56, 97, 0.1)'
+              }
+            },
+            '& .ant-btn-primary': {
+              backgroundColor: '#0A3861',
+              borderColor: '#0A3861',
+              '&:hover': {
+                backgroundColor: '#072a49',
+                borderColor: '#072a49'
+              }
+            }
+          }}
         ></MessageInput>
       </Flex>
       {visible && (

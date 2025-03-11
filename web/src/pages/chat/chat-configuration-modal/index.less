@@ -1,27 +1,65 @@
+// Define brand colors
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .chatConfigurationDescription {
   font-size: 14px;
+  color: rgba(10, 56, 97, 0.75);
+  margin-top: 4px;
 }
 
 .variableContainer {
   padding-bottom: 20px;
+
   .variableAlign {
     text-align: end;
   }
 
   .variableLabel {
     margin-right: 14px;
+    color: @brand-blue;
+    font-weight: 500;
   }
 
   .variableIcon {
     margin-inline-start: 4px;
-    color: rgba(0, 0, 0, 0.45);
+    color: @brand-red;
     cursor: help;
     writing-mode: horizontal-tb;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .variableTable {
     margin-top: 14px;
+
+    :global(.ant-table-thead > tr > th) {
+      background-color: rgba(10, 56, 97, 0.05);
+      color: @brand-blue;
+      font-weight: 500;
+    }
+
+    :global(.ant-table-tbody > tr:hover > td) {
+      background-color: rgba(10, 56, 97, 0.03);
+    }
+
+    :global(.ant-switch-checked) {
+      background-color: @brand-blue;
+    }
+
+    :global(.anticon-delete) {
+      color: @brand-red;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
+
   .editableRow {
     :global(.editable-cell) {
       position: relative;
@@ -31,12 +69,15 @@
       padding: 5px 12px;
       cursor: pointer;
       height: 22px !important;
+      transition: all 0.2s ease;
     }
+
     &:hover {
       :global(.editable-cell-value-wrap) {
         padding: 4px 11px;
-        border: 1px solid #d9d9d9;
+        border: 1px solid rgba(10, 56, 97, 0.3);
         border-radius: 2px;
+        background-color: rgba(10, 56, 97, 0.02);
       }
     }
   }
@@ -51,7 +92,22 @@
 
 .sliderInputNumber {
   width: 80px;
+  border-color: rgba(10, 56, 97, 0.2);
+
+  &:hover,
+  &:focus {
+    border-color: @brand-blue;
+  }
 }
+
 .variableSlider {
   width: 100%;
+
+  :global(.ant-slider-track) {
+    background-color: @brand-blue;
+  }
+
+  :global(.ant-slider-handle::after) {
+    box-shadow: 0 0 0 2px @brand-blue;
+  }
 }

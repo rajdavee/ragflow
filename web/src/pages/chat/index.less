@@ -1,39 +1,76 @@
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .chatWrapper {
   height: 100%;
   width: 100%;
+  background-color: #f8f9fa;
 
   .chatAppWrapper {
     width: 288px;
     padding: 26px;
+    background-color: white;
+    border-right: 1px solid rgba(10, 56, 97, 0.1);
+    box-shadow: 2px 0 8px rgba(10, 56, 97, 0.05);
 
     .chatAppContent {
       overflow-y: auto;
       width: 100%;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(10, 56, 97, 0.03);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(10, 56, 97, 0.1);
+        border-radius: 4px;
+      }
     }
 
     .chatAppCard {
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        border-color: rgba(10, 56, 97, 0.15);
+        box-shadow: 0 2px 8px rgba(10, 56, 97, 0.08);
+      }
+
       :global(.ant-card-body) {
         padding: 10px;
       }
+
       .cubeIcon {
+        color: @brand-blue;
+
         &:hover {
           cursor: pointer;
+          color: @brand-red;
         }
       }
     }
+
     .chatAppCardSelected {
       :global(.ant-card-body) {
-        background-color: @gray11;
+        background-color: rgba(10, 56, 97, 0.07);
         border-radius: 8px;
+        border-left: 3px solid @brand-blue;
       }
     }
+
     .chatAppCardSelectedDark {
       :global(.ant-card-body) {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(10, 56, 97, 0.25);
         border-radius: 8px;
+        border-left: 3px solid @brand-blue;
       }
     }
   }
+
   .chatTitleWrapper {
     width: 220px;
     padding: 26px 0;
@@ -68,6 +105,7 @@
       border-radius: 8px;
     }
   }
+
   .chatTitleCardSelectedDark {
     :global(.ant-card-body) {
       background-color: rgba(255, 255, 255, 0.1);
@@ -78,5 +116,6 @@
   .divider {
     margin: 0;
     height: 100%;
+    border-color: rgba(10, 56, 97, 0.1);
   }
 }

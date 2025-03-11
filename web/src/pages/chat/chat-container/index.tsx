@@ -56,7 +56,7 @@ const ChatContainer = ({ controller }: IProps) => {
       <Flex flex={1} className={styles.chatContainer} vertical>
         <Flex flex={1} vertical className={styles.messageContainer}>
           <div>
-            <Spin spinning={loading}>
+            <Spin spinning={loading} style={{ color: '#0A3861' }}>
               {derivedMessages?.map((message, i) => {
                 return (
                   <MessageItem
@@ -82,6 +82,13 @@ const ChatContainer = ({ controller }: IProps) => {
                     removeMessageById={removeMessageById}
                     regenerateMessage={regenerateMessage}
                     sendLoading={sendLoading}
+                    messageStyle={{
+                      backgroundColor: message.role === MessageType.Assistant ? 'rgba(10, 56, 97, 0.05)' : '#fff',
+                      border: '1px solid rgba(10, 56, 97, 0.1)',
+                      boxShadow: '0 2px 8px rgba(10, 56, 97, 0.08)',
+                      borderRadius: '8px',
+                      margin: '12px 0'
+                    }}
                   ></MessageItem>
                 );
               })}
@@ -100,6 +107,24 @@ const ChatContainer = ({ controller }: IProps) => {
           createConversationBeforeUploadDocument={
             createConversationBeforeUploadDocument
           }
+          style={{
+            '& .ant-input': {
+              borderColor: 'rgba(10, 56, 97, 0.2)',
+              borderRadius: '6px',
+              '&:hover, &:focus': {
+                borderColor: '#0A3861',
+                boxShadow: '0 0 0 2px rgba(10, 56, 97, 0.1)'
+              }
+            },
+            '& .ant-btn-primary': {
+              backgroundColor: '#0A3861',
+              borderColor: '#0A3861',
+              '&:hover': {
+                backgroundColor: '#072a49',
+                boxShadow: '0 2px 8px rgba(10, 56, 97, 0.2)'
+              }
+            }
+          }}
         ></MessageInput>
       </Flex>
       <PdfDrawer

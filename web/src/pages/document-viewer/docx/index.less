@@ -1,9 +1,15 @@
 // Copyright (c) 2017 PlanGrid, Inc.
 
+// Define brand colors
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+@brand-blue-light: rgba(10, 56, 97, 0.1);
+
 .docxViewerWrapper {
   overflow-y: scroll;
   height: 100%;
   width: 100%;
+  background-color: #f8f9fa;
 
   .box {
     width: 100%;
@@ -11,11 +17,47 @@
   }
 
   :global(.document-container) {
-    padding: 30px;
+    padding: 40px;
     width: 700px;
-    background: rgba(255, 255, 255, 0.1);
-
+    background-color: #ffffff;
     margin: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(10, 56, 97, 0.1);
+    box-shadow: 0 4px 16px rgba(10, 56, 97, 0.08);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: @brand-blue;
+    }
+
+    a {
+      color: @brand-red;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 16px 0;
+
+      th {
+        background-color: rgba(10, 56, 97, 0.05);
+        border: 1px solid rgba(10, 56, 97, 0.2);
+        color: @brand-blue;
+        font-weight: 600;
+      }
+
+      td {
+        border: 1px solid rgba(10, 56, 97, 0.1);
+      }
+    }
   }
 
   html,
@@ -48,71 +90,91 @@
     display: block;
     unicode-bidi: embed;
   }
+
   li {
     display: list-item;
     list-style-type: disc;
   }
+
   head {
     display: none;
   }
+
   table {
     display: table;
   }
+
   img {
     width: 100%;
   }
+
   tr {
     display: table-row;
   }
+
   thead {
     display: table-header-group;
   }
+
   tbody {
     display: table-row-group;
   }
+
   tfoot {
     display: table-footer-group;
   }
+
   col {
     display: table-column;
   }
+
   colgroup {
     display: table-column-group;
   }
+
   th {
     display: table-cell;
   }
+
   td {
     display: table-cell;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
     padding: 0.2em 0.5em;
   }
+
   caption {
     display: table-caption;
   }
+
   th {
     font-weight: bolder;
     text-align: center;
   }
+
   caption {
     text-align: center;
   }
+
   body {
     margin: 8px;
   }
+
   h1 {
     font-size: 2em;
     margin: 0.67em 0;
   }
+
   h2 {
     font-size: 1.5em;
     margin: 0.75em 0;
   }
+
   h3 {
     font-size: 1.17em;
     margin: 0.83em 0;
   }
+
   h4,
   p,
   blockquote,
@@ -125,14 +187,17 @@
   menu {
     margin: 1.12em 0;
   }
+
   h5 {
     font-size: 0.83em;
     margin: 1.5em 0;
   }
+
   h6 {
     font-size: 0.75em;
     margin: 1.67em 0;
   }
+
   h1,
   h2,
   h3,
@@ -143,10 +208,12 @@
   strong {
     font-weight: bolder;
   }
+
   blockquote {
     margin-left: 40px;
     margin-right: 40px;
   }
+
   i,
   cite,
   em,
@@ -154,6 +221,7 @@
   address {
     font-style: italic;
   }
+
   pre,
   tt,
   code,
@@ -161,50 +229,62 @@
   samp {
     font-family: monospace;
   }
+
   pre {
     white-space: pre;
   }
+
   button,
   textarea,
   input,
   select {
     display: inline-block;
   }
+
   big {
     font-size: 1.17em;
   }
+
   small,
   sub,
   sup {
     font-size: 0.83em;
   }
+
   sub {
     vertical-align: sub;
   }
+
   sup {
     vertical-align: super;
   }
+
   table {
     border-spacing: 2px;
   }
+
   thead,
   tbody,
   tfoot {
     vertical-align: middle;
   }
+
   td,
   th,
   tr {
     vertical-align: inherit;
   }
+
   s,
   strike,
   del {
     text-decoration: line-through;
   }
+
   hr {
     border: 1px inset;
   }
+
   ol,
   ul,
   dir,
@@ -212,9 +292,11 @@
   dd {
     margin-left: 40px;
   }
+
   ol {
     list-style-type: decimal;
   }
+
   ol ul,
   ol ul,
   ul ol,
@@ -226,45 +308,56 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
   u,
   ins {
     text-decoration: underline;
   }
+
   br:before {
     content: '\A';
     white-space: pre-line;
   }
+
   center {
     text-align: center;
   }
+
   :link,
   :visited {
     text-decoration: underline;
   }
+
   :focus {
     outline: thin dotted invert;
   }
+
   /* Begin bidirectionality settings (do not change) */
   BDO[DIR='ltr'] {
     direction: ltr;
     unicode-bidi: bidi-override;
   }
+
   BDO[DIR='rtl'] {
     direction: rtl;
     unicode-bidi: bidi-override;
   }
+
   *[DIR='ltr'] {
     direction: ltr;
     unicode-bidi: embed;
   }
+
   *[DIR='rtl'] {
     direction: rtl;
     unicode-bidi: embed;
   }
+
   @media print {
     h1 {
       page-break-before: always;
     }
+
     h1,
     h2,
     h3,
@@ -273,6 +366,7 @@
     h6 {
       page-break-after: avoid;
     }
+
     ul,
     ol,
     dl {

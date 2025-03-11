@@ -12,7 +12,11 @@ const LoginRightPanel = () => {
   const { t } = useTranslate('login');
   return (
     <section className={styles.rightPanel}>
-      <SvgIcon name="login-star" width={80}></SvgIcon>
+      <SvgIcon
+        name="login-star"
+        width={80}
+        style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))' }}
+      />
       <Flex vertical gap={40}>
         <Title
           level={1}
@@ -24,10 +28,14 @@ const LoginRightPanel = () => {
           {t('description')}
         </Text>
         <Flex align="center" gap={16}>
-          <Avatars></Avatars>
+          <Avatars />
           <Flex vertical>
             <Space>
-              <Rate disabled defaultValue={5} />
+              <Rate
+                disabled
+                defaultValue={5}
+                style={{ color: '#A8232F', fontSize: '16px' }}
+              />
               <span
                 className={classNames(styles.white, styles.loginRateNumber)}
               >

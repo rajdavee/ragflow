@@ -11,6 +11,8 @@ const FileError = ({ children }: React.PropsWithChildren) => {
       <Alert
         type="error"
         message={<h2>{children || t('fileError')}</h2>}
+        style={{ maxWidth: 600, padding: '16px 24px' }}
+        showIcon
       ></Alert>
     </Flex>
   );

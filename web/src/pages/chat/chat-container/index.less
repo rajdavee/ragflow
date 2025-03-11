@@ -1,7 +1,31 @@
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .chatContainer {
   padding: 0 0 24px 24px;
+  background-color: #f8f9fa;
+  border-left: 1px solid rgba(10, 56, 97, 0.1);
+
   .messageContainer {
     overflow-y: auto;
     padding-right: 24px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(10, 56, 97, 0.05);
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(10, 56, 97, 0.2);
+      border-radius: 6px;
+
+      &:hover {
+        background-color: rgba(10, 56, 97, 0.4);
+      }
+    }
   }
 }

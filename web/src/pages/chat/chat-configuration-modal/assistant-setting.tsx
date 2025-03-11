@@ -54,9 +54,16 @@ const AssistantSetting = ({
   );
 
   const uploadButton = (
-    <button style={{ border: 0, background: 'none' }} type="button">
-      <PlusOutlined />
-      <div style={{ marginTop: 8 }}>{t('upload', { keyPrefix: 'common' })}</div>
+    <button
+      style={{
+        border: 0,
+        background: 'none',
+        color: '#0A3861',
+      }}
+      type="button"
+    >
+      <PlusOutlined style={{ color: '#0A3861' }} />
+      <div style={{ marginTop: 8, color: '#0A3861' }}>{t('upload', { keyPrefix: 'common' })}</div>
     </button>
   );
 
@@ -70,17 +77,38 @@ const AssistantSetting = ({
         name={'name'}
         label={t('assistantName')}
         rules={[{ required: true, message: t('assistantNameMessage') }]}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Input placeholder={t('namePlaceholder')} />
+        <Input
+          placeholder={t('namePlaceholder')}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+            borderRadius: '4px',
+          }}
+        />
       </Form.Item>
-      <Form.Item name={'description'} label={t('description')}>
-        <Input placeholder={t('descriptionPlaceholder')} />
+      <Form.Item
+        name={'description'}
+        label={t('description')}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
+      >
+        <Input
+          placeholder={t('descriptionPlaceholder')}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+            borderRadius: '4px',
+          }}
+        />
       </Form.Item>
       <Form.Item
         name="icon"
         label={t('assistantAvatar')}
         valuePropName="fileList"
         getValueFromEvent={normFile}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
         <Upload
           listType="picture-card"
@@ -97,28 +125,49 @@ const AssistantSetting = ({
         initialValue={'English'}
         tooltip="coming soon"
         style={{ display: 'none' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
         <Select
           options={[
             { value: 'Chinese', label: t('chinese', { keyPrefix: 'common' }) },
             { value: 'English', label: t('english', { keyPrefix: 'common' }) },
           ]}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+          }}
         />
       </Form.Item>
       <Form.Item
         name={emptyResponseField}
         label={t('emptyResponse')}
         tooltip={t('emptyResponseTip')}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Input placeholder="" onChange={handleChange} />
+        <Input
+          placeholder=""
+          onChange={handleChange}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+            borderRadius: '4px',
+          }}
+        />
       </Form.Item>
       <Form.Item
         name={['prompt_config', 'prologue']}
         label={t('setAnOpener')}
         tooltip={t('setAnOpenerTip')}
         initialValue={t('setAnOpenerInitial')}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Input.TextArea autoSize={{ minRows: 5 }} />
+        <Input.TextArea
+          autoSize={{ minRows: 5 }}
+          style={{
+            borderColor: 'rgba(10, 56, 97, 0.2)',
+            borderRadius: '4px',
+          }}
+        />
       </Form.Item>
       <Form.Item
         label={t('quote')}
@@ -126,8 +175,16 @@ const AssistantSetting = ({
         name={['prompt_config', 'quote']}
         tooltip={t('quoteTip')}
         initialValue={true}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Switch />
+        <Switch
+          checkedChildren={t('yes', { keyPrefix: 'common' })}
+          unCheckedChildren={t('no', { keyPrefix: 'common' })}
+          style={{
+            backgroundColor: '#0A3861',
+          }}
+        />
       </Form.Item>
       <Form.Item
         label={t('keyword')}
@@ -135,8 +192,16 @@ const AssistantSetting = ({
         name={['prompt_config', 'keyword']}
         tooltip={t('keywordTip')}
         initialValue={false}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Switch />
+        <Switch
+          checkedChildren={t('yes', { keyPrefix: 'common' })}
+          unCheckedChildren={t('no', { keyPrefix: 'common' })}
+          style={{
+            backgroundColor: '#0A3861',
+          }}
+        />
       </Form.Item>
       <Form.Item
         label={t('tts')}
@@ -144,8 +209,17 @@ const AssistantSetting = ({
         name={['prompt_config', 'tts']}
         tooltip={t('ttsTip')}
         initialValue={false}
+        style={{ marginBottom: '20px' }}
+        labelCol={{ style: { color: '#0A3861' } }}
       >
-        <Switch onChange={handleTtsChange} />
+        <Switch
+          checkedChildren={t('yes', { keyPrefix: 'common' })}
+          unCheckedChildren={t('no', { keyPrefix: 'common' })}
+          onChange={handleTtsChange}
+          style={{
+            backgroundColor: '#0A3861',
+          }}
+        />
       </Form.Item>
       <KnowledgeBaseItem
         required={false}

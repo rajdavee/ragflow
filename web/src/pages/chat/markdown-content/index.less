@@ -1,3 +1,6 @@
+@brand-blue: #0A3861;
+@brand-red: #A8232F;
+
 .markdownContentWrapper {
   :global(section.think) {
     padding-left: 10px;
@@ -6,52 +9,122 @@
     margin-bottom: 10px;
     font-size: 12px;
   }
+
   :global(blockquote) {
     padding-left: 10px;
-    border-left: 4px solid #ccc;
+    border-left: 4px solid @brand-blue;
+    background-color: rgba(10, 56, 97, 0.05);
+    padding: 8px 12px;
+    margin: 16px 0;
+  }
+
+  :global(a) {
+    color: @brand-red;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken(@brand-red, 10%);
+    }
+  }
+
+  :global(h1),
+  :global(h2),
+  :global(h3),
+  :global(h4),
+  :global(h5),
+  :global(h6) {
+    color: @brand-blue;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  :global(code) {
+    background-color: rgba(10, 56, 97, 0.05);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  :global(pre) {
+    background-color: rgba(10, 56, 97, 0.05);
+    border-radius: 6px;
+    padding: 16px;
+    overflow: auto;
+    border: 1px solid rgba(10, 56, 97, 0.1);
   }
 }
 
 .referencePopoverWrapper {
   max-width: 50vw;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(10, 56, 97, 0.15);
+  border-radius: 8px;
+  padding: 16px;
 }
 
 .referenceChunkImage {
   width: 10vw;
   object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid rgba(10, 56, 97, 0.1);
+  box-shadow: 0 2px 6px rgba(10, 56, 97, 0.1);
 }
 
 .referenceImagePreview {
   max-width: 45vw;
   max-height: 45vh;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(10, 56, 97, 0.2);
 }
+
 .chunkContentText {
   .chunkText;
   max-height: 45vh;
   overflow-y: auto;
+  color: @brand-blue;
+  line-height: 1.6;
+  padding-right: 10px;
 }
+
 .documentLink {
   padding: 0;
+  color: @brand-red !important;
+
+  &:hover {
+    color: darken(@brand-red, 10%) !important;
+    text-decoration: underline;
+  }
 }
 
 .referenceIcon {
   padding: 0 6px;
+  color: @brand-red;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .cursor {
   display: inline-block;
   width: 1px;
   height: 16px;
-  background-color: black;
+  background-color: @brand-blue;
   animation: blink 0.6s infinite;
   vertical-align: text-top;
+
   @keyframes blink {
     0% {
       opacity: 1;
     }
+
     50% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -61,4 +134,7 @@
 .fileThumbnail {
   display: inline-block;
   max-width: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(10, 56, 97, 0.1);
+  padding: 2px;
 }

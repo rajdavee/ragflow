@@ -118,7 +118,7 @@ const Login = () => {
                 <Checkbox> {t('rememberMe')}</Checkbox>
               </Form.Item>
             )}
-            <div>
+            <div style={{ marginBottom: '24px' }}>
               {title === 'login' && (
                 <div>
                   {t('signInTip')}
@@ -142,36 +142,37 @@ const Login = () => {
               size="large"
               onClick={onCheck}
               loading={loading}
+              style={{
+                height: '48px',
+                borderRadius: '6px',
+                fontWeight: 500,
+                fontSize: '16px',
+                transition: 'all 0.3s ease'
+              }}
             >
               {title === 'login' ? t('login') : t('continue')}
             </Button>
             {title === 'login' && (
               <>
-                {/* <Button
-                  block
-                  size="large"
-                  onClick={toGoogle}
-                  style={{ marginTop: 15 }}
-                >
-                  <div>
-                    <Icon
-                      icon="local:google"
-                      style={{ verticalAlign: 'middle', marginRight: 5 }}
-                    />
-                    Sign in with Google
-                  </div>
-                </Button> */}
                 {location.host === Domain && (
                   <Button
                     block
                     size="large"
                     onClick={toGoogle}
-                    style={{ marginTop: 15 }}
+                    style={{
+                      marginTop: 15,
+                      height: '48px',
+                      borderRadius: '6px',
+                      border: '1px solid #0A3861',
+                      color: '#0A3861',
+                      fontWeight: 500,
+                      transition: 'all 0.3s ease'
+                    }}
                   >
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-center">
                       <Icon
                         icon="local:github"
-                        style={{ verticalAlign: 'middle', marginRight: 5 }}
+                        style={{ verticalAlign: 'middle', marginRight: 8 }}
                       />
                       Sign in with Github
                     </div>

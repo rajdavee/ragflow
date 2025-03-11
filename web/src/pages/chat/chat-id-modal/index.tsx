@@ -15,12 +15,19 @@ const ChatIdModal = ({
 
   return (
     <Modal
-      title={t('overview')}
+      title={<span style={{ color: '#0A3861', fontWeight: 500 }}>{t('overview')}</span>}
       open={visible}
       onCancel={hideModal}
       cancelButtonProps={{ style: { display: 'none' } }}
       onOk={hideModal}
       okText={t('close', { keyPrefix: 'common' })}
+      okButtonProps={{
+        style: {
+          backgroundColor: '#0A3861',
+          borderColor: '#0A3861'
+        }
+      }}
+      bodyStyle={{ padding: '24px' }}
     >
       <Paragraph copyable={{ text: id }} className={styles.id}>
         {id}
@@ -28,6 +35,7 @@ const ChatIdModal = ({
       <Link
         href="https://ragflow.io/docs/dev/http_api_reference#create-session-with-chat-assistant"
         target="_blank"
+        style={{ color: '#A8232F' }}
       >
         {t('howUseId')}
       </Link>
